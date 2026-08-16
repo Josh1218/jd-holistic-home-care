@@ -243,8 +243,8 @@
         <div class="success-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
         </div>
-        <h2>Request received</h2>
-        <p>Thank you, <span id="success-name">there</span> — a care coordinator will call <span id="success-phone">you</span> within one business day to schedule your free consultation.</p>
+        <h2>Almost done — check your email app</h2>
+        <p>We've opened a pre-filled email to our care team, <span id="success-name">there</span>. Just hit <b>send</b> in your email app to finish your request — a care coordinator will call <span id="success-phone">you</span> within one business day.</p>
         <div class="ref">In a hurry? Call us directly at <b>(555) 214-0388</b> — our team is available 24/7.</div>
         <a class="btn btn-ghost" style="margin-top:26px;border-color:rgba(251,247,236,0.4);color:var(--cream);" href="index.html">Back to Home</a>
       </div>
@@ -305,25 +305,45 @@
     return valid;
   }
 
+  // Sends requests via a pre-filled email — no third-party account needed.
+  // Change this to your real inbox address.
+  const OWNER_EMAIL = 'hello@jdholisticcare.com';
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!validate()) return;
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-
-    const name = document.getElementById('f-name').value.trim().split(' ')[0];
+    const name = document.getElementById('f-name').value.trim();
+    const firstName = name.split(' ')[0];
     const phone = document.getElementById('f-phone').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const relation = document.getElementById('f-relation').value;
+    const timing = document.querySelector('input[name="timing"]:checked').value;
+    const message = document.getElementById('f-message').value.trim();
 
-    // Simulated submission — wire this endpoint up to your CRM or email service.
-    setTimeout(function(){
-      document.getElementById('success-name').textContent = name || 'there';
-      document.getElementById('success-phone').textContent = phone || 'you';
-      formState.classList.remove('active');
-      successState.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 600);
+    const subject = 'Consultation request — ' + name;
+    const body =
+      'Name: ' + name + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Email: ' + (email || 'Not provided') + '\n' +
+      'Care needed for: ' + relation + '\n' +
+      'Timing: ' + timing + '\n' +
+      'Notes: ' + (message || 'None') + '\n';
+
+    const mailtoUrl =
+      'mailto:' + encodeURIComponent(OWNER_EMAIL) +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailtoUrl;
+
+    document.getElementById('success-name').textContent = firstName || 'there';
+    document.getElementById('success-phone').textContent = phone || 'you';
+    formState.classList.remove('active');
+    successState.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
