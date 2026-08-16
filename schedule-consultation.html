@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule a Free Consultation — JD Holistic Home Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16234A;
+    --parchment:#F5EFDE;
+    --cream:#FBF7EC;
+    --sage:#4A5D82;
+    --sage-deep:#22345E;
+    --brass:#9E1B32;
+    --charcoal:#241F16;
+    --line:rgba(22,35,74,0.14);
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--parchment);color:var(--charcoal);
+    font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.08;margin:0;color:var(--ink);}
+  p{margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--brass);
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:100px;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;cursor:pointer;
+    border:1px solid transparent;transition:transform .25s ease, background .25s ease, opacity .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--ink);color:var(--cream);}
+  .btn-primary:hover{background:var(--sage-deep);}
+  .btn-primary:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--cream);}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;}
+  ::selection{background:var(--brass);color:var(--cream);}
+
+  header{
+    padding:22px 0;border-bottom:1px solid var(--line);
+    background:rgba(245,239,222,0.9);backdrop-filter:blur(10px);
+    position:sticky;top:0;z-index:20;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .logo{font-family:'Fraunces',serif;font-size:18px;font-weight:500;display:flex;align-items:center;gap:10px;}
+  .logo-mark{width:28px;height:28px;flex-shrink:0;}
+  .nav-phone{font-weight:600;font-size:14.5px;}
+  @media(max-width:640px){.nav-phone{display:none;}}
+
+  main{padding:64px 0 90px;}
+  .layout{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:start;}
+  @media(max-width:940px){.layout{grid-template-columns:1fr;}}
+
+  .intro h1{font-size:clamp(32px,4vw,46px);letter-spacing:-0.01em;margin-top:14px;}
+  .intro p.lede{margin-top:18px;font-size:17px;opacity:0.8;max-width:46ch;}
+
+  .reassure{display:flex;flex-direction:column;gap:18px;margin-top:38px;}
+  .reassure .item{display:flex;gap:14px;align-items:flex-start;}
+  .reassure .num{
+    width:30px;height:30px;border-radius:50%;border:1.4px solid var(--brass);
+    color:var(--brass);font-family:'Fraunces',serif;font-size:13.5px;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;
+  }
+  .reassure h3{font-size:16px;font-weight:600;margin-bottom:3px;}
+  .reassure p{font-size:14.5px;opacity:0.72;}
+
+  .trust-row{display:flex;gap:24px;flex-wrap:wrap;margin-top:40px;padding-top:28px;border-top:1px solid var(--line);}
+  .trust-row .item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--sage-deep);}
+  .trust-row svg{width:16px;height:16px;flex-shrink:0;}
+
+  /* form panel */
+  .panel{
+    background:var(--ink);border-radius:26px;padding:48px;position:relative;overflow:hidden;
+  }
+  .panel h2{color:var(--cream);font-size:24px;}
+  .panel > p{color:var(--cream);opacity:0.65;font-size:14.5px;margin-top:8px;}
+
+  form{display:flex;flex-direction:column;gap:14px;margin-top:26px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  label{font-size:12.5px;font-weight:600;color:var(--cream);opacity:0.75;margin-bottom:6px;display:block;}
+  .field{display:flex;flex-direction:column;}
+  input,select,textarea{
+    width:100%;padding:13px 16px;border-radius:10px;border:1px solid rgba(251,247,236,0.22);
+    background:rgba(251,247,236,0.06);color:var(--cream);
+    font-family:'Inter',sans-serif;font-size:14.5px;
+  }
+  input::placeholder,textarea::placeholder{color:rgba(251,247,236,0.45);}
+  select option{color:var(--charcoal);}
+  textarea{resize:vertical;min-height:80px;}
+  .field-error{font-size:12px;color:#F3B4B4;margin-top:5px;display:none;}
+  .field.invalid input,.field.invalid select{border-color:#D6606F;}
+  .field.invalid .field-error{display:block;}
+
+  .radio-group{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+  .radio-group input{position:absolute;opacity:0;width:1px;height:1px;}
+  .radio-group label{
+    margin:0;padding:9px 16px;border-radius:100px;border:1px solid rgba(251,247,236,0.28);
+    font-size:13px;font-weight:500;color:var(--cream);opacity:0.8;cursor:pointer;transition:all .2s ease;
+  }
+  .radio-group input:checked + label{background:var(--brass);border-color:var(--brass);opacity:1;}
+
+  form .btn-primary{background:var(--brass);color:var(--cream);margin-top:8px;justify-content:center;}
+  form .btn-primary:hover{background:#B5223B;}
+  .form-note{font-size:12px;color:var(--cream);opacity:0.5;text-align:center;}
+
+  .panel-state{display:none;}
+  .panel-state.active{display:block;}
+  .success-icon{
+    width:56px;height:56px;border-radius:50%;background:var(--brass);
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  }
+  .success-icon svg{width:26px;height:26px;color:var(--cream);}
+  .success h2{color:var(--cream);}
+  .success p{color:var(--cream);opacity:0.75;margin-top:12px;font-size:15px;max-width:40ch;}
+  .success .ref{
+    margin-top:24px;padding:14px 18px;background:rgba(251,247,236,0.08);border-radius:10px;
+    font-size:13px;color:var(--cream);opacity:0.75;
+  }
+  .success .ref b{color:var(--cream);opacity:1;}
+
+  footer{padding:30px 0;border-top:1px solid var(--line);}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;opacity:0.6;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html">
+      <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+        <circle cx="15" cy="15" r="13.5" stroke="#16234A" stroke-width="1.3"/>
+        <path d="M9 16.2c1.4 3 3.6 4.6 6 4.6s4.6-1.6 6-4.6" stroke="#9E1B32" stroke-width="1.3" stroke-linecap="round"/>
+        <path d="M10 12.5c1.6-2.6 3.3-4 5-4s3.4 1.4 5 4" stroke="#16234A" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      JD Holistic Home Care
+    </a>
+    <a class="nav-phone" href="tel:15552140388">(555) 214-0388</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap layout">
+
+    <div class="intro">
+      <p class="eyebrow">Free, No-Obligation Consultation</p>
+      <h1>Let's build a care plan around your family.</h1>
+      <p class="lede">Answer a few questions and a care coordinator will call you within one business day to schedule your free in-home visit — no cost, no commitment.</p>
+
+      <div class="reassure">
+        <div class="item">
+          <span class="num">1</span>
+          <div><h3>We call you back</h3><p>A real care coordinator, usually within one business day.</p></div>
+        </div>
+        <div class="item">
+          <span class="num">2</span>
+          <div><h3>Free in-home visit</h3><p>We meet your loved one where they live and listen first.</p></div>
+        </div>
+        <div class="item">
+          <span class="num">3</span>
+          <div><h3>A plan built for them</h3><p>Matched caregiver, clear pricing, no pressure to commit.</p></div>
+        </div>
+      </div>
+
+      <div class="trust-row">
+        <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Licensed &amp; Insured</span>
+        <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>Background-Checked Caregivers</span>
+        <span class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Available 24/7</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-state active" id="form-state">
+        <h2>Request your free consultation</h2>
+        <p>Takes about a minute. Fields marked required.</p>
+
+        <form id="consult-form" novalidate>
+          <div class="form-row">
+            <div class="field" data-field="name">
+              <label for="f-name">Your name *</label>
+              <input id="f-name" name="name" type="text" placeholder="Full name" required>
+              <span class="field-error">Please enter your name.</span>
+            </div>
+            <div class="field" data-field="phone">
+              <label for="f-phone">Phone number *</label>
+              <input id="f-phone" name="phone" type="tel" placeholder="(555) 555-5555" required>
+              <span class="field-error">Please enter a valid phone number.</span>
+            </div>
+          </div>
+
+          <div class="field" data-field="email">
+            <label for="f-email">Email address</label>
+            <input id="f-email" name="email" type="email" placeholder="you@email.com">
+            <span class="field-error">Please enter a valid email.</span>
+          </div>
+
+          <div class="field" data-field="relation">
+            <label for="f-relation">Care needed for *</label>
+            <select id="f-relation" name="relation" required>
+              <option value="" disabled selected>Select one…</option>
+              <option>Myself</option>
+              <option>A parent</option>
+              <option>A spouse</option>
+              <option>Another loved one</option>
+            </select>
+            <span class="field-error">Please select an option.</span>
+          </div>
+
+          <div class="field" data-field="timing">
+            <label>When is care needed? *</label>
+            <div class="radio-group">
+              <input type="radio" name="timing" id="t1" value="Right away">
+              <label for="t1">Right away</label>
+              <input type="radio" name="timing" id="t2" value="Within a month">
+              <label for="t2">Within a month</label>
+              <input type="radio" name="timing" id="t3" value="Just exploring">
+              <label for="t3">Just exploring</label>
+            </div>
+            <span class="field-error">Please choose a timeframe.</span>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Anything we should know? (optional)</label>
+            <textarea id="f-message" name="message" placeholder="Tell us a bit about their needs, schedule, or concerns"></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Request My Free Consultation</button>
+          <p class="form-note">No obligation. We never share your information.</p>
+        </form>
+      </div>
+
+      <div class="panel-state success" id="success-state">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h2>Almost done — check your email app</h2>
+        <p>We've opened a pre-filled email to our care team, <span id="success-name">there</span>. Just hit <b>send</b> in your email app to finish your request — a care coordinator will call <span id="success-phone">you</span> within one business day.</p>
+        <div class="ref">In a hurry? Call us directly at <b>(555) 214-0388</b> — our team is available 24/7.</div>
+        <a class="btn btn-ghost" style="margin-top:26px;border-color:rgba(251,247,236,0.4);color:var(--cream);" href="index.html">Back to Home</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 JD Holistic Home Care. All rights reserved.</span>
+    <span>Licensed Home Care Agency · Bonded &amp; Insured</span>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('consult-form');
+  const formState = document.getElementById('form-state');
+  const successState = document.getElementById('success-state');
+
+  function setError(fieldEl, hasError){
+    fieldEl.classList.toggle('invalid', hasError);
+  }
+
+  function validate(){
+    let valid = true;
+
+    const name = document.getElementById('f-name');
+    const nameField = name.closest('.field');
+    const nameOk = name.value.trim().length > 1;
+    setError(nameField, !nameOk);
+    valid = valid && nameOk;
+
+    const phone = document.getElementById('f-phone');
+    const phoneField = phone.closest('.field');
+    const phoneOk = phone.value.replace(/[^0-9]/g, '').length >= 7;
+    setError(phoneField, !phoneOk);
+    valid = valid && phoneOk;
+
+    const email = document.getElementById('f-email');
+    const emailField = email.closest('.field');
+    const emailVal = email.value.trim();
+    const emailOk = emailVal === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+    setError(emailField, !emailOk);
+    valid = valid && emailOk;
+
+    const relation = document.getElementById('f-relation');
+    const relationField = relation.closest('.field');
+    const relationOk = relation.value !== '';
+    setError(relationField, !relationOk);
+    valid = valid && relationOk;
+
+    const timingChecked = document.querySelector('input[name="timing"]:checked');
+    const timingField = document.querySelector('[data-field="timing"]');
+    setError(timingField, !timingChecked);
+    valid = valid && !!timingChecked;
+
+    return valid;
+  }
+
+  // Sends requests via a pre-filled email — no third-party account needed.
+  // Change this to your real inbox address.
+  const OWNER_EMAIL = 'rayosjoshua12@gmail.com';
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validate()) return;
+
+    const name = document.getElementById('f-name').value.trim();
+    const firstName = name.split(' ')[0];
+    const phone = document.getElementById('f-phone').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const relation = document.getElementById('f-relation').value;
+    const timing = document.querySelector('input[name="timing"]:checked').value;
+    const message = document.getElementById('f-message').value.trim();
+
+    const subject = 'Consultation request — ' + name;
+    const body =
+      'Name: ' + name + '\n' +
+      'Phone: ' + phone + '\n' +
+      'Email: ' + (email || 'Not provided') + '\n' +
+      'Care needed for: ' + relation + '\n' +
+      'Timing: ' + timing + '\n' +
+      'Notes: ' + (message || 'None') + '\n';
+
+    const mailtoUrl =
+      'mailto:' + encodeURIComponent(OWNER_EMAIL) +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+
+    window.location.href = mailtoUrl;
+
+    document.getElementById('success-name').textContent = firstName || 'there';
+    document.getElementById('success-phone').textContent = phone || 'you';
+    formState.classList.remove('active');
+    successState.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
